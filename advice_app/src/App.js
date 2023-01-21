@@ -15,7 +15,6 @@ class App extends Component{
     axios.get('https://api.adviceslip.com/advice')
     .then((response)=> {
       const {advice} = response.data.slip
-      console.log(advice);
       this.setState({advice})
     })
     .catch((error)=> {
@@ -28,6 +27,9 @@ class App extends Component{
       <div className='app'>
               <div className='card'>
               <h1 className='heading'>{this.state.advice}</h1>
+              <button className='button' onClick={this.fetchAdvice}>
+                <span>Give me Advice!</span>
+              </button>
               </div>
 
       </div>
